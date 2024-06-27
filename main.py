@@ -1,8 +1,8 @@
 ### Main grading program
 
 # Pre-defining values
-grade = 'unset'
-average_score = 'unset'
+grade = False
+average_score = False
 score_math = 100
 score_science = 90
 score_english = 95
