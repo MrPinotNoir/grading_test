@@ -1,27 +1,29 @@
 ### Main grading program
 
 # Pre-defining values
-grade = 0
-average_score = 0
+grade = 'unset'
+average_score = 'unset'
 score_math = 100
 score_science = 90
 score_english = 95
 
 score_array = [score_english, score_math, score_science]
 
-# Checking for valid scores
+# Checking for valid scores, making sure they are within range and integers.
 try:
     if 0 <= score_math and score_science and score_english <= 100:
         score_valid = True
     else:
         score_valid = False
-        print("One or more of the scores are not between 0-100")
-        exit()
 except:
     print("One or more of the scores are not integers.")
     exit()
 
+if not score_valid:
+    print("One or more of the scores are not between 0-100")
+    exit()
 
+# Sums all in the array and divides by the number of entries, finding the average.
 def array_score_averager():
     average_score = sum(score_array) / len(score_array)
     return average_score
