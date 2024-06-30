@@ -1,13 +1,19 @@
 ### Main grading program
+score_array = []
+################### ENTER SCORES HERE #########
+def enter_scores():
+    score_math = 100
+    score_science = 90
+    score_english = 95
+
+    score_array.append(score_math)
+    score_array.append(score_english)
+    score_array.append(score_science)
+
 
 # Pre-defining values
 grade = False
 average_score = False
-score_math = 100
-score_science = 90
-score_english = 95
-
-score_array = [score_english, score_math, score_science]
 
 # Checking for valid scores, making sure they are within range and integers.
 def validator():
@@ -39,6 +45,7 @@ def score_grader(average_score):
 
 # Running the functions
 def main():
+    enter_scores()
     validator()
     average_score = array_score_averager()
     print("Your average score is", average_score)
@@ -46,7 +53,6 @@ def main():
     print("\nYour final grade is", grade)
 
 main()
-
 
 #### Old code
 
