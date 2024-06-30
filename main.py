@@ -10,28 +10,26 @@ score_english = 95
 score_array = [score_english, score_math, score_science]
 
 # Checking for valid scores, making sure they are within range and integers.
-try:
-    if 0 <= min(score_array) and max(score_array) <= 100:
-        score_valid = True
-    else:
-        score_valid = False
-except:
-    print("One or more of the scores are not integers.")
-    exit()
+def validator():
+    try:
+        if 0 <= min(score_array) and max(score_array) <= 100:
+            score_valid = True
+        else:
+            score_valid = False
+    except:
+        print("One or more of the scores are not integers.")
+        exit()
 
-if score_valid == False:
-    print("One or more of the scores are not between 0-100")
-    exit()
+    if score_valid == False:
+        print("One or more of the scores are not between 0-100")
+        exit()
 
 # Sums all in the array and divides by the number of entries, finding the average.
 def array_score_averager():
     average_score = sum(score_array) / len(score_array)
     return average_score
 
-average_score = array_score_averager()
-print("Your average score is", average_score)
-
-def score_grader():
+def score_grader(average_score):
     grade_dict = {90: "Grade A", 80: "Grade B", 70: "Grade C", 60: "Grade D", 0: "Grade F"}
     for threshold, grade in grade_dict.items():
         if average_score >= threshold:
@@ -39,10 +37,18 @@ def score_grader():
     print("Averaged score was not between 0-100 somehow???")
     exit()
 
+# Running the functions
+def main():
+    validator()
+    average_score = array_score_averager()
+    print("Your average score is", average_score)
+    grade = score_grader(average_score)
+    print("\nYour final grade is", grade)
 
-grade = score_grader()
-print(grade)
+main()
 
+
+#### Old code
 
 # def score_grader(grade):
 #     if 90 <= average_score <= 100:
