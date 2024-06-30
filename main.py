@@ -1,14 +1,17 @@
 ### Main grading program
 score_array = []
 ################### ENTER SCORES HERE #########
+### Add a variable and add an array append also
 def enter_scores():
     score_math = 100
     score_science = 90
     score_english = 95
+    score_bio = 99
 
     score_array.append(score_math)
     score_array.append(score_english)
     score_array.append(score_science)
+    score_array.append(score_bio)
 
 
 # Pre-defining values
