@@ -19,7 +19,7 @@ except:
     print("One or more of the scores are not integers.")
     exit()
 
-if not score_valid:
+if score_valid == False:
     print("One or more of the scores are not between 0-100")
     exit()
 
