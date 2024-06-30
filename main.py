@@ -11,7 +11,7 @@ score_array = [score_english, score_math, score_science]
 
 # Checking for valid scores, making sure they are within range and integers.
 try:
-    if 0 <= score_math and score_science and score_english <= 100:
+    if 0 <= min(score_array) and max(score_array) <= 100:
         score_valid = True
     else:
         score_valid = False
